@@ -1,4 +1,6 @@
 <resources>
-    <string name="app_name">wearable</string>
+    <string name="app_name">SunWear</string>
     <string name="my_digital_name">My Digital</string>
+    <string name="watchface_name">Sunshine Digital</string>
+
 </resources>
