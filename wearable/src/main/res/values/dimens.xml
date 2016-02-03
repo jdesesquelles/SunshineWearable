@@ -9,10 +9,14 @@
     <dimen name="digital_temp_text_size">20dp</dimen>
     <dimen name="digital_temp_text_size_round">25dp</dimen>
 
-    <dimen name="digital_x_offset">15dp</dimen>
+    <dimen name="digital_x_offset_square">15dp</dimen>
     <dimen name="digital_x_offset_round">25dp</dimen>
-    <dimen name="digital_y_offset">90dp</dimen>
+    <dimen name="digital_y_offset_square">90dp</dimen>
+    <dimen name="digital_y_offset_round">90dp</dimen>
 
     <dimen name="interactive_text_size">20dp</dimen>
+
+    <item name="stroke_width" format="float" type="dimen">0.75</item>
+
 
 </resources>

@@ -2,5 +2,17 @@
     <string name="app_name">SunWear</string>
     <string name="my_digital_name">My Digital</string>
     <string name="watchface_name">Sunshine Digital</string>
+    <!-- string name="text_time_format">%d:%02d</string -->
+
+
+
+    <string name="wearable_data_item_path">/sunshine-data</string>
+    <string name="wearable_data_item_high_temp">high-temp</string>
+    <string name="wearable_data_item_low_temp">low-temp</string>
+    <string name="wearable_data_item_asset">weather-icon</string>
+    <string name="wearable_data_item_weather_id">weather-id</string>
+
+
+
 
 </resources>

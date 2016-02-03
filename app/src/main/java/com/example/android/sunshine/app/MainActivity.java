@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements ForecastFragment.
      * Substitute you own project number here. This project number comes
      * from the Google Developers Console.
      */
-    static final String PROJECT_NUMBER = "Your Project Number";
+    static final String PROJECT_NUMBER = "My_registration_Id";
 
     private boolean mTwoPane;
     private String mLocation;
@@ -111,13 +111,14 @@ public class MainActivity extends AppCompatActivity implements ForecastFragment.
             mGcm = GoogleCloudMessaging.getInstance(this);
             String regId = getRegistrationId(this);
 
-            if (PROJECT_NUMBER.equals("Your Project Number")) {
-                new AlertDialog.Builder(this)
-                .setTitle("Needs Project Number")
-                .setMessage("GCM will not function in Sunshine until you set the Project Number to the one from the Google Developers Console.")
-                .setPositiveButton(android.R.string.ok, null)
-                .create().show();
-            } else if (regId.isEmpty()) {
+//            if (PROJECT_NUMBER.equals("")) {
+//                new AlertDialog.Builder(this)
+//                .setTitle("Needs Project Number")
+//                .setMessage("GCM will not function in Sunshine until you set the Project Number to the one from the Google Developers Console.")
+//                .setPositiveButton(android.R.string.ok, null)
+//                .create().show();
+//            } else
+            if (regId.isEmpty()) {
                 registerInBackground(this);
             }
         } else {

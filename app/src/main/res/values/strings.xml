@@ -33,6 +33,8 @@
 
     <!-- Menu label to fetch updated weather info from the server -->
     <string name="action_refresh" translatable="false">Refresh</string>
+    <string name="action_refresh_wearable" translatable="false">Refresh WatchFace</string>
+
     <string name="title_activity_detail">Details</string>
     <string name="title_activity_settings">Settings</string>
 
@@ -221,5 +223,14 @@
 
     <!-- For Shared Element Transitions -->
     <string name="detail_icon_transition_name" translatable="false">TN_DetailIcon</string>
+
+    <!-- String defintion for wearable -->
+    <string name="wearable_data_item_path">/sunshine-data</string>
+    <string name="wearable_data_item_high_temp">high-temp</string>
+    <string name="wearable_data_item_low_temp">low-temp</string>
+    <string name="wearable_data_item_asset">weather-icon</string>
+    <string name="wearable_data_item_weather_id">weather-id</string>
+
+
 
 </resources>
