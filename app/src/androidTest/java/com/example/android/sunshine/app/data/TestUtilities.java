@@ -29,6 +29,7 @@ import com.example.android.sunshine.app.utils.PollingCheck;
 
 import java.util.Map;
 import java.util.Set;
+import android.annotation.SuppressLint;
 
 /*
     Students: These are functions and some test data to make it easier to test your database and

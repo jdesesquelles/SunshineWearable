@@ -15,7 +15,6 @@
  */
 package com.example.android.sunshine.app;
 
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -33,14 +32,13 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-
 import com.example.android.sunshine.app.data.WeatherContract;
 import com.example.android.sunshine.app.sync.SunshineSyncAdapter;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
-
 import java.io.IOException;
+
 
 public class MainActivity extends AppCompatActivity implements ForecastFragment.Callback {
 
@@ -59,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements ForecastFragment.
     private boolean mTwoPane;
     private String mLocation;
     private GoogleCloudMessaging mGcm;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

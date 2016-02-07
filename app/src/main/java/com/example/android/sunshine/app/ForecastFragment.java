@@ -17,6 +17,7 @@ package com.example.android.sunshine.app;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.TypedArray;
@@ -147,10 +148,14 @@ public class ForecastFragment extends Fragment implements LoaderManager.LoaderCa
 //            return true;
 //        }
 
-//            if (id == R.id.action_refresh_wearable) {
+        if (id == R.id.action_refresh_wearable) {
+            // Testing the content observer
+            ContentValues weatherValues = createWeatherValues();
+            Uri weatherInsertUri = getActivity().getContentResolver()
+                    .insert(WeatherContract.WeatherEntry.CONTENT_URI, weatherValues);
 //                updateWearable();
-//                return true;
-//            }
+            return true;
+        }
         if (id == R.id.action_map) {
             openPreferredLocationInMap();
             return true;
@@ -158,6 +163,23 @@ public class ForecastFragment extends Fragment implements LoaderManager.LoaderCa
         return super.onOptionsItemSelected(item);
     }
 
+    //TODO
+    public ContentValues createWeatherValues() {
+        ContentValues weatherValues = new ContentValues();
+        long TEST_DATE = 1419033600L;
+        weatherValues.put(WeatherContract.WeatherEntry.COLUMN_LOC_KEY, 1);
+        weatherValues.put(WeatherContract.WeatherEntry.COLUMN_DATE, TEST_DATE);
+        weatherValues.put(WeatherContract.WeatherEntry.COLUMN_DEGREES, 1.1);
+        weatherValues.put(WeatherContract.WeatherEntry.COLUMN_HUMIDITY, 1.2);
+        weatherValues.put(WeatherContract.WeatherEntry.COLUMN_PRESSURE, 1.3);
+        weatherValues.put(WeatherContract.WeatherEntry.COLUMN_MAX_TEMP, 75);
+        weatherValues.put(WeatherContract.WeatherEntry.COLUMN_MIN_TEMP, 65);
+        weatherValues.put(WeatherContract.WeatherEntry.COLUMN_SHORT_DESC, "Asteroids");
+        weatherValues.put(WeatherContract.WeatherEntry.COLUMN_WIND_SPEED, 5.5);
+        weatherValues.put(WeatherContract.WeatherEntry.COLUMN_WEATHER_ID, 321);
+
+        return weatherValues;
+    }
 
 //    public void updateWearable() {
 ////        getActivity().getContentResolver().query()
@@ -204,7 +226,7 @@ public class ForecastFragment extends Fragment implements LoaderManager.LoaderCa
                 String locationSetting = Utility.getPreferredLocation(getActivity());
                 ((Callback) getActivity())
                         .onItemSelected(WeatherContract.WeatherEntry.buildWeatherLocationWithDate(
-                                        locationSetting, date),
+                                locationSetting, date),
                                 vh
                         );
             }
